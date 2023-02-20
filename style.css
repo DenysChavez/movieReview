@@ -2,15 +2,33 @@
     box-sizing: border-box;
  }
 
+/* 1200px / 16px = 75em */
+@media (max-width: 75em) {
+   html {
+     font-size: 60%;
+   }
+ }
+ 
+ /* 980px / 16px = 61.25em */
+ @media (max-width: 61.25em) {
+   html {
+     font-size: 58%;
+   }
+ }
+ 
+ /* 460px / 16px = 28.75em */
+ @media (max-width: 28.75em) {
+   html {
+     font-size: 55%;
+   }
+ }
+
+
  body {
     background-color: #131720;
     font-family: sans-serif;
  }
 
- h3 {
-    color: white;
-    text-align: center;
- }
 
  .topnav {
     overflow: hidden;
@@ -51,21 +69,61 @@
     padding: 6px 9px;
  }
 
- .thumbnail {
-   height: 250px;
-   width: 200px;
-   border-radius: 19px;
- }
+ /* Section */
+.movies-section {
+   text-align: center;
+   padding: 10rem 2rem;
+   background: var(--main-blue);
+}
 
- .column {
-   float: left;
-   width: 25%;
-   padding: 10px 10px;
+   /* "Automagic" image grid using no media queries */
+.movies-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+   grid-gap: 4rem;
+   width: 100%;
+   max-width: 1280px;
+   margin: 0 auto;
+   margin-bottom: 6rem;
+}
+
+@media (max-width: 30.625em) {
+   .movies-section {
+     padding: 6rem 1rem;
+   }
+ 
+   .movies-grid {
+     grid-template-columns: 1fr;
+   }
  }
 
  .card {
-   border-radius: 19px;
-   padding: 15px;
-   text-align: center;
-   background-color: #151f30;
+   background: var(--main-gray);
+   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+   border-radius: 2px;
+ }
+
+ .thumbnail {
+   height: calc(100% - 6.8rem);
+   width: 100%;
+   object-fit: cover;
+ }
+
+ .movie {
+   text-decoration: none;
+ }
+
+ h3 {
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    /* font-size: 2rem; */
+    margin-bottom: 8px;
+ }
+
+ .reviews {
+   /* font-size: 2rem; */
+   text-decoration: none;
+   color: yellow;
+   margin-top: 0;
  }
