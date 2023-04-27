@@ -37,7 +37,7 @@ function returnMovies(url) {
             div_movie.appendChild(title);
             movies_grid.appendChild(div_card);
 
-            //add title of the movies and review page
+            //add title, image of the movies and review page
             title.innerHTML = `${element.title}`;
             reviews.innerHTML = "Reviews";
             reviews.href = `movie.html?${element.id}&title=${element.title}`;
